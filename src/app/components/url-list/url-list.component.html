@@ -1,6 +1,6 @@
 <div class="tinyurl-list-section">
     <h2 class="tinyurl-list-title">Public URLs</h2>
-    <input type="text" class="tinyurl-search-bar" placeholder="Search URLs..." name="searchTerm" autocomplete="off" />
+    <input type="text" class="tinyurl-search-bar" [formControl]="searchControl" placeholder="Search URLs..." name="searchTerm" autocomplete="off" />
     <div class="tinyurl-list tinyurl-scrollable-list">
         <!-- List starts here-->
         <ng-container *ngFor="let urlDet of tinyUrlDetails">

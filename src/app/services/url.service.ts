@@ -10,9 +10,9 @@ export class UrlService {
   api = "https://localhost:7125/api";
   constructor(private http: HttpClient) { }
 
-  private urlListSubject = new BehaviorSubject<any[]>([]);
+  private urlList = new BehaviorSubject<any[]>([]);
 
-  urlList$ = this.urlListSubject.asObservable();
+  urlList$ = this.urlList.asObservable();
   
   create(data:any){
     return this.http.post(`${this.api}/shortenUrl`, data);
@@ -21,7 +21,7 @@ export class UrlService {
   getUrls(){
     return this.http.get(`${this.api}/urls`).subscribe((response:any) => {
 
-        this.urlListSubject.next(response);
+        this.urlList.next(response);
 
       });;
   }
