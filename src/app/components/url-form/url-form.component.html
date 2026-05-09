@@ -18,8 +18,8 @@
             <div class="tinyurl-short-url" *ngIf="shortUrlGenerated">
                 <span>Short URL:</span>
                 <a
-                    href="https://tiny-url-demo.azurewebsites.net/603de8">https://tiny-url-demo.azurewebsites.net/603de8</a>
-                <button class="tinyurl-copy-btn"><span>Copy</span></button>
+                    href="{{originalUrl}}">{{urlPrefix}}{{generatedUrl}}</a>
+                <button class="tinyurl-copy-btn" (click)="copyUrl()"><span>Copy</span></button>
             </div>
         </div>
         <app-url-list class="tinyurl-main btm-min-height"></app-url-list>
