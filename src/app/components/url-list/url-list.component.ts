@@ -15,8 +15,8 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 })
 export class UrlListComponent {
   tinyUrlDetails:any[] = [];
-  urlPrefix: string = "https://localhost:7125/api/";
-  url: string = "https://localhost:7125/";
+  urlPrefix: string = "https://tinyurl-api-f7d6avd9b7dtana3.centralindia-01.azurewebsites.net/api/";
+  url: string = "https://tinyurl-api-f7d6avd9b7dtana3.centralindia-01.azurewebsites.net/";
   subscription!: Subscription;
 
   searchControl = new FormControl('');
