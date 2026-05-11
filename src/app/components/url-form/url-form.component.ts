@@ -43,6 +43,10 @@ export class UrlFormComponent {
           console.log(res);
           this.generatedUrl = res.shortCode;
           this.originalUrl = res.originalUrl;
+          localStorage.setItem(
+            `token_${res.shortCode}`,
+            res.secretToken
+          );
           this.sharedService.triggerPageRefresh();
           this.tinyUrlForm.reset();
         },error:(err) =>{

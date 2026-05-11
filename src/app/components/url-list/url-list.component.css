@@ -97,6 +97,7 @@
     text-decoration: underline;
     word-break: break-all;
     font-size: 1.08rem;
+    width: 21em;
 }
 
 a:-webkit-any-link {

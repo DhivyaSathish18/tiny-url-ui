@@ -60,9 +60,9 @@ copyToClipboard(shortCode: string): void {
     alert('Copied to clipboard');
   }
 
-  deleteUrl(id:number){
+  deleteUrl(id:number, code:string){
     if(confirm('Are you sure you want to delete this URL?')){
-      this.urlService.delete(id).subscribe({
+      this.urlService.delete(id, code).subscribe({
         next:(res)=>{
           alert('URL deleted successfully');
           this.getUrls();

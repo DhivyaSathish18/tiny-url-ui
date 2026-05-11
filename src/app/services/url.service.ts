@@ -26,8 +26,9 @@ export class UrlService {
       });;
   }
   
-  delete(id: number){
-    return this.http.delete(`${this.api}/${id}`);
+  delete(id: number, code:string){ 
+    const token = localStorage.getItem(`token_${code}`);
+    return this.http.delete(`${this.api}/delete/${id}?token=${token}`);
   }
   search(query: string){
     return this.http.get(`${this.api}/search?query=${query}`);
