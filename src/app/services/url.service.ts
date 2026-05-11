@@ -7,7 +7,7 @@ import { BehaviorSubject, tap } from 'rxjs';
 })
 export class UrlService {
 
-  api = "https://tinyurl-api-f7d6avd9b7dtana3.centralindia-01.azurewebsites.net/api";
+  api = "https://localhost:7125/api";
   constructor(private http: HttpClient) { }
 
   private urlList = new BehaviorSubject<any[]>([]);

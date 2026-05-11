@@ -17,7 +17,7 @@ export class UrlFormComponent {
   tinyUrlForm: FormGroup;
   isError: boolean = false;
   shortUrlGenerated: boolean = false;
-  urlPrefix: string = "https://tinyurl-api-f7d6avd9b7dtana3.centralindia-01.azurewebsites.net/";
+  urlPrefix: string = "https://localhost:7125/";
   generatedUrl: string = "";
   originalUrl:string = "";
 
