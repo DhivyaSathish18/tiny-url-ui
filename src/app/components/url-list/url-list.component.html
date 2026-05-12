@@ -1,1 +1,25 @@
-<p>url-list works!</p>
+<div class="tinyurl-list-section">
+    <h2 class="tinyurl-list-title">Public URLs</h2>
+    <input type="text" class="tinyurl-search-bar" [formControl]="searchControl" placeholder="Search URLs..." name="searchTerm" autocomplete="off" />
+    <div class="tinyurl-list tinyurl-scrollable-list">
+        <!-- List starts here-->
+        <ng-container *ngFor="let urlDet of tinyUrlDetails">
+            <div class="tinyurl-list-item">
+                <div class="tinyurl-list-main">
+                    <div class="tinyurl-short-url-row">
+                        <span (click)="redirectUrl(urlDet.shortCode)" style="cursor: pointer;"
+                            class="tinyurl-short-url-link">{{urlPrefix}}{{urlDet.shortCode}}</span>
+                        <button class="tinyurl-copy-btn tinyurl-copy-btn-small" (click)="copyToClipboard(urlDet.shortCode)">
+                            <span>Copy</span>
+                        </button>
+                        <span title="Total Clicks" class="tinyurl-clicks-badge">{{urlDet.clicks}} clicks</span>
+                    </div>
+                    <div class="tinyurl-original-url">
+                        {{urlDet.originalUrl}}
+                    </div>
+                </div>
+                <button class="tinyurl-delete-btn" (click)="deleteUrl(urlDet.id, urlDet.shortCode)">Delete</button>
+            </div>
+        </ng-container>
+    </div>
+</div>

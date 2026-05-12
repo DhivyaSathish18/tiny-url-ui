@@ -1,0 +1,200 @@
+.tinyurl-container.top-align {
+    justify-content: center;
+    align-items: center;
+}
+
+.tinyurl-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 .2rem;
+    background: none;
+    box-shadow: none;
+}
+
+.tinyurl-title {
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #5b21b6;
+    font-weight: 700;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+@media (max-width: 700px) {
+    .tinyurl-form {
+        max-width: 90vw;
+        min-width: 0;
+        padding: 1rem .3rem;
+    }
+}
+
+.tinyurl-form {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px #5b21b614;
+    padding: 1.1rem .8rem .8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 500px;
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 1.1rem;
+    margin-top: .3rem;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+    unicode-bidi: isolate;
+}
+.tinyurl-input-row {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+.tinyurl-generate-btn {
+    width: 100%;
+    padding: .6rem 0;
+    background: linear-gradient(90deg, #f43f5e, #a21caf);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: .6rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #5b21b614;
+    transition: background .2s, box-shadow .2s;
+    margin-top: .2rem;
+}
+
+.tinyurl-main {
+    width: 90vw;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.tinyurl-url-input{
+    flex: 1;
+    padding: .5rem .7rem;
+    border: 1.2px solid #a5b4fc;
+    border-radius: .6rem;
+    font-size: .95rem;
+    outline: none;
+    transition: border .2s;
+    background: #f3f4f6;
+}
+
+input:not([type="image" i], [type="range" i], [type="checkbox" i], [type="radio" i]) {
+    overflow-clip-margin: 0px !important;
+    overflow: clip !important;
+}
+
+input[type="url" i] {
+    padding-block: 1px;
+    padding-inline: 2px;
+}
+
+.tinyurl-checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: .95rem;
+    color: #5b21b6;
+    font-weight: 500;
+    gap: .3rem;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+label {
+    cursor: default;
+}
+.tinyurl-checkbox-label input[type=checkbox] {
+    accent-color: #5b21b6;
+    width: 1rem;
+    height: 1rem;
+}
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    padding: initial;
+    border: initial;
+    margin: 3px 3px 3px 4px;
+}
+
+.tinyurl-result-section {
+    margin-top: .8rem;
+    text-align: center;
+}
+.tinyurl-error-msg {
+    color: #dc2626;
+    background: #fef2f2;
+    padding: .4rem .8rem;
+    border-radius: .6rem;
+    font-weight: 500;
+    margin-top: .4rem;
+    display: inline-block;
+}
+
+.tinyurl-short-url {
+    font-size: 1rem;
+    color: #059669;
+    font-weight: 600;
+    background: #f0fdf4;
+    padding: .5rem .8rem;
+    border-radius: .6rem;
+    display: inline-block;
+    margin-bottom: .4rem;
+    max-width: 90vw;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+.tinyurl-copy-btn {
+    margin-left: .7rem;
+    padding: .32rem .9rem;
+    font-size: .95rem;
+    font-weight: 500;
+    color: #fff;
+    background: #2563eb;
+    border: none;
+    border-radius: .7rem;
+    cursor: pointer;
+    transition: background .2s;
+    outline: none;
+}
+.btm-min-height{
+        min-height: 0vh!important;
+}

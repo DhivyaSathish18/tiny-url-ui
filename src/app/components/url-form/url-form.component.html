@@ -1,1 +1,28 @@
-<p>url-form works!</p>
+<main class="tinyurl-main btm-min-height">
+
+    <div class="tinyurl-container top-align">
+        <h1 class="tinyurl-title">Tiny URL</h1>
+        <form [formGroup]="tinyUrlForm" class="tinyurl-form">
+            <div class="tinyurl-input-row">
+
+                <input type="text" formControlName="originalUrl" name="urlInput" placeholder="Enter URL to shorten"
+                    autocomplete="off" class="tinyurl-url-input" />
+                <label class="tinyurl-checkbox-label">
+                    <input type="checkbox" formControlName="isPrivate"> IsPrivate </label>
+            </div>
+            <button type="submit" class="tinyurl-generate-btn" (click)="OnSubmit()"> Generate </button>
+        </form>
+        <div class="tinyurl-result-section" *ngIf="isError || shortUrlGenerated">
+            <div class="tinyurl-error-msg" *ngIf="isError">Please enter a valid URL (must start with http:// or
+                https://)</div>
+            <div class="tinyurl-short-url" *ngIf="shortUrlGenerated && !isError">
+                <span>Short URL:</span>
+                <a
+                    href="{{originalUrl}}">{{urlPrefix}}{{generatedUrl}}</a>
+                <button class="tinyurl-copy-btn" (click)="copyUrl()"><span>Copy</span></button>
+            </div>
+        </div>
+        <app-url-list class="tinyurl-main btm-min-height"></app-url-list>
+    </div>
+
+</main>
