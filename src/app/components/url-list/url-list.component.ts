@@ -59,14 +59,14 @@ copyToClipboard(shortCode: string): void {
   }
 
   deleteUrl(id:number, code:string){
-    if(confirm('Are you sure you want to delete this URL?')){
+    //if(confirm('Are you sure you want to delete this URL?')){
       this.urlService.delete(id, code).subscribe({
         next:(res)=>{
           this.getUrls();
         },error(err){
         }
       })
-    }
+    //}
   }
   redirectUrl(shortCode: string){
     this.urlService.redirectUrl(shortCode).subscribe({
