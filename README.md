@@ -1,27 +1,135 @@
-# TinyUrlUi
+# Tiny URL UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.20.
+A responsive frontend application for generating and managing Tiny URLs.
 
-## Development server
+Built using Angular 18 and Bootstrap.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Generate Tiny URLs
+- Redirect using short code
+- View all URLs
+- Update URL details
+- Delete URLs
+- Copy Tiny URL to clipboard
+- Responsive UI
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tech Stack
 
-## Running unit tests
+- Angular 18
+- TypeScript
+- Bootstrap 5
+- RxJS
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## Prerequisites
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Install:
 
-## Further help
+- Node.js
+- Angular CLI
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm install -g @angular/cli
+```
+
+---
+
+## Run Project Locally
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run application:
+
+```bash
+ng serve
+```
+
+Application runs on:
+
+```txt
+http://localhost:4200
+```
+
+---
+
+## Production Build
+
+```bash
+ng build --configuration production
+```
+
+Build files will be generated inside:
+
+```txt
+dist/tiny-url-ui/browser
+```
+
+---
+
+## Environment Configuration
+
+### Development
+
+`src/environments/environment.ts`
+
+```ts
+export const environment = {
+  production: false,
+  apiUrl: 'https://localhost:7125/api'
+};
+```
+
+### Production
+
+`src/environments/environment.prod.ts`
+
+```ts
+export const environment = {
+  production: true,
+  apiUrl: 'https://tinyurl-api-f7d6avd9b7dtana3.centralindia-01.azurewebsites.net/'
+};
+```
+
+---
+
+## Project Structure
+
+```txt
+src/
+ ├── app/
+ │    ├── components/
+ │    ├── services/
+ │    ├── models/
+ │    └── app.routes.ts
+ ├── environments/
+ └── styles.css
+```
+
+---
+
+## Deployment
+
+Frontend deployed using:
+
+- Azure Static Web Apps
+- GitHub Actions
+
+---
+
+## Live Demo
+
+Frontend URL:
+
+```txt
+https://proud-desert-0a1d6b900.7.azurestaticapps.net/
+```
