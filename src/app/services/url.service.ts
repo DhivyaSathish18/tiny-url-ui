@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UrlService {
 
-  api = "https://localhost:7125/api";
+  api = environment.apiPrefix;
   constructor(private http: HttpClient) { }
 
   private urlList = new BehaviorSubject<any[]>([]);

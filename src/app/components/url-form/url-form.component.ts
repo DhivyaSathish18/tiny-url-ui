@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { UrlListComponent } from '../url-list/url-list.component';
 import { UrlService } from '../../services/url.service';
 import { SharedService } from '../../services/shared.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-url-form',
@@ -17,7 +18,7 @@ export class UrlFormComponent {
   tinyUrlForm: FormGroup;
   isError: boolean = false;
   shortUrlGenerated: boolean = false;
-  urlPrefix: string = "https://localhost:7125/";
+  urlPrefix: string = environment.apiUrl;
   generatedUrl: string = "";
   originalUrl:string = "";
 
@@ -30,7 +31,6 @@ export class UrlFormComponent {
   OnSubmit() {
     if (this.tinyUrlForm.valid) {
       this.isError = false;
-      console.log(this.tinyUrlForm.value);
       this.shortUrlGenerated = true;
 
       const payload = {
@@ -40,7 +40,6 @@ export class UrlFormComponent {
 
       this.urlService.create(payload).subscribe({
         next: (res:any) => {
-          console.log(res);
           this.generatedUrl = res.shortCode;
           this.originalUrl = res.originalUrl;
           localStorage.setItem(
@@ -48,9 +47,11 @@ export class UrlFormComponent {
             res.secretToken
           );
           this.sharedService.triggerPageRefresh();
-          this.tinyUrlForm.reset();
+          this.tinyUrlForm.reset({
+            originalUrl: '',
+            isPrivate: false
+          });
         },error:(err) =>{
-          console.log(err);
         }
       })
     } else {
@@ -59,6 +60,5 @@ export class UrlFormComponent {
   }
   copyUrl(): void {
     navigator.clipboard.writeText(this.urlPrefix+this.generatedUrl);
-    alert('Copied to clipboard');
   }
 }
